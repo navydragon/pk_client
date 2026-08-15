@@ -15,7 +15,8 @@ export interface IButtonProps {
 		| 'cancel'
 		| 'green'
 		| 'red'
-		| 'purple';
+		| 'purple'
+		| 'outline';
 	withIcon?: {
 		type:
 			| 'add'

@@ -51,7 +51,12 @@ export const News: FC = () => {
 							type='button'
 							className={styles.button}
 							onClick={handleShowMore}>
-							Показать ещё {Math.min(STEP, news.length - visibleCount)}
+							Показать ещё {Math.min(STEP, news.length - visibleCount)}{' '}
+							{Math.min(STEP, news.length - visibleCount) === 1
+								? 'новость'
+								: Math.min(STEP, news.length - visibleCount) < 5
+									? 'новости'
+									: 'новостей'}
 						</button>
 					)}
 				</div>

@@ -1,140 +1,251 @@
+/* Hero: Figma 515:1262, fluid so no horizontal scroll */
 .main {
-	margin: 0;
-	padding: 20px 80px 80px;
+	margin: 0 auto;
+	padding: 0 clamp(20px, 4.2vw, 80px);
 	box-sizing: border-box;
 	width: 100%;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+	max-width: 1920px;
+	position: relative;
+	overflow-x: clip;
+	overflow-y: visible;
+}
+
+.headerWrap {
+	position: relative;
+	z-index: 10;
+	padding-top: 20px;
+}
+
+.hero {
+	position: relative;
+	width: 100%;
+	/* Keep CTAs inside first viewport band */
+	height: min(822px, calc(100vh - 100px));
+	min-height: 640px;
+	max-height: 822px;
+	overflow: hidden;
 }
 
 .title {
-	margin: 80px 0 0 0;
+	position: absolute;
+	top: clamp(40px, 6vh, 84px);
+	left: 0;
+	right: 0;
+	margin: 0;
+	z-index: 2;
 	font-weight: 600;
-	font-size: 68px;
+	/* Scales down before overflowing container */
+	font-size: clamp(36px, 5.2vw, 106px);
 	font-style: normal;
-	line-height: 1.05;
-	color: var(--main-black-color);
-	&_color_blue {
-		color: var(--main-blue-light-color);
+	line-height: 1.1;
+	text-align: center;
+	color: #2a2a2a;
+	pointer-events: none;
+	/* Must stay visible — oval around «навыки» extends above the line box */
+	overflow: visible;
+	&__row {
+		display: block;
+		white-space: nowrap;
+	}
+	&__accent {
+		color: var(--main-blue-color);
+	}
+	&__skills {
+		position: relative;
+		display: inline-block;
+	}
+	&__oval {
+		position: absolute;
+		left: -14%;
+		top: -24%;
+		width: 128%;
+		height: 148%;
+		max-width: none;
+		pointer-events: none;
+		z-index: 1;
+	}
+}
+
+.mascot {
+	position: absolute;
+	left: 50%;
+	top: clamp(140px, 22vh, 214px);
+	transform: translateX(-50%) scale(0.9);
+	width: min(674px, 48%);
+	height: min(797px, 78%);
+	z-index: 3;
+	pointer-events: none;
+	overflow: hidden;
+	&__img {
+		position: absolute;
+		top: 0;
+		left: -61.9%;
+		width: 209.49%;
+		height: 176.97%;
+		max-width: none;
+		object-fit: cover;
+		object-position: center top;
+	}
+}
+
+.badge {
+	position: absolute;
+	z-index: 5;
+	box-sizing: border-box;
+	height: 56px;
+	padding: 0 32px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--main-blue-color);
+	border-radius: 8px;
+	background: var(--main-white-color);
+	color: var(--main-blue-color);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1;
+	white-space: nowrap;
+	user-select: none;
+	&_topLeft {
+		top: clamp(105px, calc(14vh + 35px), 160px);
+		left: 0;
+		width: min(277px, 40%);
+		/* Keep badge from covering title on mid widths */
+		@media (max-width: 1500px) {
+			top: clamp(59px, calc(4vh + 35px), 91px);
+		}
+	}
+	&_middleRight {
+		top: clamp(220px, 38vh, 344px);
+		right: 0;
+		width: min(428px, 42%);
+		max-width: 100%;
+	}
+	&_bottomRight {
+		bottom: 80px;
+		top: auto;
+		left: auto;
+		/* Figma: ~17% from content right, never overflow */
+		right: clamp(0px, 17%, 296px);
+		width: min(277px, 40%);
 	}
 }
 
 .subtitle {
-	margin: 20px 0 0 0;
+	position: absolute;
+	left: 0;
+	bottom: 160px;
+	top: auto;
+	z-index: 5;
+	margin: 0;
+	max-width: min(578px, 46%);
+	width: 100%;
 	font-weight: 400;
 	font-size: 16px;
 	font-style: normal;
-	line-height: 1.15;
-	max-width: 640px;
-	color: var(--main-black-color);
-}
-
-.background {
-	position: relative;
-	margin: 40px 0 0 0;
-	width: 100%;
-	height: 100%;
-	border-radius: 24px;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-}
-
-.video {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	z-index: 1;
-	filter: grayscale(100%) brightness(0.85) contrast(1.05);
-}
-
-.overlay {
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(
-		90deg,
-		#072971 0%,
-		#245BC2CC 40%,
-		#D9E8FF4D 100%
-	);
-	z-index: 2;
-}
-
-.info {
-	margin: auto 60px 40px;
-	width: calc(100% - 120px);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	z-index: 5;
-}
-
-.caption {
-	margin: 0;
-	display: flex;
-	align-items: center;
-	gap: 12px;
-}
-
-.text {
-	margin: 0;
-	font-weight: 500;
-	font-size: 16px;
-	font-style: normal;
-	line-height: 1.15;
-	color: var(--main-white-color);
-}
-
-.point {
-	margin: 0;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background-color: var(--main-white-color);
+	line-height: 1.2;
+	color: #2a2a2a;
 }
 
 .buttons {
+	position: absolute;
+	left: 0;
+	bottom: 80px;
+	top: auto;
+	z-index: 6;
 	margin: 0;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	gap: 20px;
-}
-
-@media (max-width: 1600px) {
-	.main {
-		padding: 20px 40px 40px;
-	}
-	.title {
-		font-size: 56px;
-	}
+	max-width: min(600px, 55%);
 }
 
 @media (max-width: 1440px) {
-	.main {
-		padding: 20px;
-	}
 	.title {
-		margin: 40px 0 0 0;
-		font-size: 48px;
+		font-size: clamp(36px, 4.6vw, 72px);
 	}
-	.info {
-		margin: auto 32px 40px;
-		width: calc(100% - 64px);
-	}
-	.caption {
-		gap: 8px;
-	}
-	.point {
-		width: 6px;
-		height: 6px;
-	}
-	.text {
+	.badge {
+		height: 48px;
+		padding: 0 20px;
 		font-size: 14px;
 	}
+	.subtitle {
+		bottom: 140px;
+		font-size: 14px;
+		max-width: min(480px, 42%);
+	}
 	.buttons {
+		bottom: 64px;
 		gap: 12px;
+		max-width: min(574px, 58%);
+	}
+	.badge_bottomRight {
+		bottom: 64px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.hero {
+		height: auto;
+		min-height: 0;
+		max-height: none;
+		overflow: visible;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		padding-bottom: 32px;
+	}
+	.title {
+		position: static;
+		margin: 24px 0 0;
+		font-size: clamp(28px, 6vw, 40px);
+		text-align: left;
+		pointer-events: auto;
+		overflow: visible;
+		&__row {
+			white-space: normal;
+		}
+	}
+	.mascot {
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: none;
+		width: min(320px, 70%);
+		height: 380px;
+		margin: 16px auto;
+		order: 3;
+	}
+	.badge {
+		position: static;
+		margin: 10px 0 0;
+		width: fit-content;
+		max-width: 100%;
+		white-space: normal;
+		height: auto;
+		min-height: 48px;
+		padding: 12px 20px;
+		&_topLeft,
+		&_middleRight,
+		&_bottomRight {
+			top: auto;
+			right: auto;
+			left: auto;
+			bottom: auto;
+			width: fit-content;
+		}
+	}
+	.subtitle {
+		position: static;
+		margin: 24px 0 0;
+		max-width: none;
+		order: 4;
+	}
+	.buttons {
+		position: static;
+		margin: 20px 0 0;
+		max-width: none;
+		order: 5;
 	}
 }

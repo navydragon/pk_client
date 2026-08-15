@@ -79,6 +79,11 @@
 		background: var(--accent-purple-color);
 		border: 1px solid var(--accent-purple-color);
 	}
+	&_color_outline {
+		color: var(--main-blue-color);
+		background: var(--main-white-color);
+		border: 1px solid var(--main-blue-color);
+	}
 	&_block {
 		color: var(--main-grey-color);
 		background: var(--inactive-color);

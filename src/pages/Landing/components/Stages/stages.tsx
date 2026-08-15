@@ -13,6 +13,9 @@ import styles from './stages.module.scss';
 
 const btnStyle: CSSProperties = {
 	margin: 'auto 0 0 0',
+	width: '277px',
+	height: '56px',
+	borderRadius: '8px',
 };
 
 export const Stages: FC = () => {

@@ -6,7 +6,7 @@ import styles from './company.module.scss';
 
 export const Company: FC = () => {
 	return (
-		<section className={styles.company}>
+		<section id='company' className={styles.company}>
 			<div className={styles.caption}>
 				<div className={styles.caption__point}></div>
 				<p className={styles.caption__text}>

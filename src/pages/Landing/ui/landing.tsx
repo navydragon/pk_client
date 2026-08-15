@@ -22,6 +22,7 @@ import {
 	getProgramsAction,
 	getStreamsAction,
 	getNewsAction,
+	getReviewAction,
 } from '../../../store/landing/actions';
 
 import styles from '../styles/landing.module.scss';
@@ -34,6 +35,7 @@ export const Landing: FC = () => {
 		dispatch(getProgramsAction());
 		dispatch(getStreamsAction());
 		dispatch(getNewsAction());
+		dispatch(getReviewAction());
 	}, [dispatch]);
 
 	if (isLoadingLanding) {

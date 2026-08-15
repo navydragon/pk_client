@@ -133,15 +133,17 @@
 
 
 .button {
-	margin: 20px 0 0 0;
+	margin: 40px auto 0;
 	padding: 20px;
 	box-sizing: border-box;
+	min-width: 277px;
+	height: 56px;
 	font-weight: 500;
 	font-size: 16px;
-	font-style: bold;
 	line-height: 1.05;
 	color: var(--main-blue-color);
 	border: none;
+	border-radius: 8px;
 	background-color: inherit;
 	outline: none;
 	cursor: pointer;

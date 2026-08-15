@@ -2,49 +2,46 @@ import type { FC } from 'react';
 
 import styles from './description.module.scss';
 
+const items = [
+	{
+		title: 'Практическая направленность',
+		text: 'Мы разрабатываем программы с учётом реальных профессиональных задач, с которыми сталкиваются специалисты в повседневной работе. Обучение строится вокруг прикладных кейсов, инструментов и методик, которые можно использовать сразу после окончания курса.',
+	},
+	{
+		title: 'Актуальные программы',
+		text: 'Содержание программ регулярно обновляется с учётом изменений в законодательстве, технологиях и управленческих практиках. Это позволяет слушателям получать знания, соответствующие современным требованиям работодателей и отрасли.',
+	},
+	{
+		title: 'Гибкие форматы обучения',
+		text: 'Большинство программ реализуется в онлайн или гибридном формате, что позволяет совмещать обучение с работой. Слушатели получают доступ к учебным материалам и поддержке преподавателей без необходимости отрыва от профессиональной деятельности.',
+	},
+] as const;
+
 export const Description: FC = () => {
 	return (
 		<section id='description' className={styles.description}>
-			<div className={styles.caption}>
-				<div className={styles.caption__point}></div>
-				<p className={styles.caption__text}>О ДПО</p>
+			<div className={styles.top}>
+				<div className={styles.caption}>
+					<span className={styles.caption__point} aria-hidden />
+					<p className={styles.caption__text}>О ДПО</p>
+				</div>
+				<h2 className={styles.title}>
+					<span className={styles.title__accent}>
+						Мы помогаем развивать профессиональные компетенции,
+					</span>
+					<span className={styles.title__rest}>
+						которые действительно применимы в работе.
+					</span>
+				</h2>
 			</div>
-			<h2 className={styles.title}>
-				<span className={styles.title_color_blue}>
-					Мы помогаем развивать профессиональные компетенции,
-				</span>{' '}
-				которые&nbsp;действительно применимы в&nbsp;работе.
-			</h2>
+
 			<ul className={styles.list}>
-				<li className={styles.item}>
-					<h4 className={styles.item__title}>Практическая направленность</h4>
-					<p className={styles.item__text}>
-						Мы разрабатываем программы с&nbsp;учётом реальных профессиональных
-						задач, с&nbsp;которыми сталкиваются специалисты в&nbsp;повседневной
-						работе. Обучение строится вокруг прикладных кейсов, инструментов
-						и&nbsp;методик, которые можно использовать сразу после окончания
-						курса.
-					</p>
-				</li>
-				<li className={styles.item}>
-					<h4 className={styles.item__title}>Актуальные программы</h4>
-					<p className={styles.item__text}>
-						Содержание программ регулярно обновляется с&nbsp;учётом изменений
-						в&nbsp;законодательстве, технологиях и&nbsp;управленческих
-						практиках. Это позволяет слушателям получать знания, соответствующие
-						современным требованиям работодателей и&nbsp;отрасли.
-					</p>
-				</li>
-				<li className={styles.item}>
-					<h4 className={styles.item__title}>Гибкие форматы обучения</h4>
-					<p className={styles.item__text}>
-						Большинство программ реализуется в&nbsp;онлайн или&nbsp;гибридном
-						формате, что&nbsp;позволяет совмещать обучение с&nbsp;работой.
-						Слушатели получают доступ к&nbsp;учебным материалам и&nbsp;поддержке
-						преподавателей без&nbsp;необходимости отрыва
-						от&nbsp;профессиональной деятельности.
-					</p>
-				</li>
+				{items.map((item) => (
+					<li className={styles.item} key={item.title}>
+						<h3 className={styles.item__title}>{item.title}</h3>
+						<p className={styles.item__text}>{item.text}</p>
+					</li>
+				))}
 			</ul>
 		</section>
 	);

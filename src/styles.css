@@ -44,6 +44,14 @@
 	background-color: var(--background-color);
 }
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	overflow-x: clip;
+}
+
 /* Chrome / Edge / Safari */
 
 ::-webkit-scrollbar-track {

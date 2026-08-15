@@ -35,5 +35,7 @@ const checkResponse = async (res: Response) => {
 };
 
 export const request = (endpoint: string, options: RequestInit) => {
-	return fetch(`${API_URL}${endpoint}`, options).then(checkResponse);
+	const base = API_URL.replace(/\/$/, '');
+	const path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+	return fetch(`${base}${path}`, options).then(checkResponse);
 };

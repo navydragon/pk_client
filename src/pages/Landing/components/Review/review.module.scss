@@ -7,13 +7,26 @@
 	flex-direction: column;
 }
 
+.header {
+	margin: 0;
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 40px;
+	&__text {
+		flex: 1;
+		min-width: 0;
+	}
+}
+
 .title {
 	margin: 0;
 	font-weight: 600;
 	font-size: 56px;
 	font-style: normal;
 	line-height: 1.05;
-
+	max-width: 870px;
 	width: 100%;
 	color: var(--main-black-color);
 }
@@ -26,6 +39,31 @@
 	font-style: normal;
 	line-height: 1.15;
 	color: var(--main-black-color);
+}
+
+.score {
+	margin: 12px 0 0 0;
+	padding: 32px;
+	box-sizing: border-box;
+	width: 351px;
+	flex-shrink: 0;
+	border-radius: 24px;
+	background-color: #F6F7F9;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	&__value {
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 1;
+		color: var(--main-black-color);
+	}
+	&__label {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: var(--main-black-color);
+	}
 }
 
 .container {
@@ -63,6 +101,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 12px;
 	}
 	&__tag {
 		margin: 0;
@@ -74,6 +113,7 @@
 		background-color: #D9E8FF;
 		color: #072971;
 		transition: all .3s ease-out;
+		white-space: nowrap;
 	}
 	&__text {
 		margin: 36px 0 52px 0;
@@ -95,16 +135,27 @@
 	}
 }
 
+.actions {
+	margin: 40px 0 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
 .button {
-	margin: 20px 0 0 0;
+	margin: 0;
 	padding: 20px;
 	box-sizing: border-box;
+	min-width: 277px;
+	height: 56px;
 	font-weight: 500;
 	font-size: 16px;
-	font-style: bold;
 	line-height: 1.05;
 	color: var(--main-blue-color);
 	border: none;
+	border-radius: 8px;
 	background-color: inherit;
 	outline: none;
 	cursor: pointer;
@@ -114,7 +165,6 @@
 	}
 }
 
-
 @media (max-width: 1600px) {
 	.review {
 		padding: 40px;
@@ -122,13 +172,34 @@
 	.title {
 		font-size: 44px;
 	}
+	.score {
+		width: 300px;
+		padding: 24px;
+	}
 }
 
 @media (max-width: 1440px) {
 	.review {
 		padding: 40px 20px;
 	}
+	.header {
+		flex-direction: column;
+		gap: 24px;
+	}
+	.score {
+		width: 100%;
+		max-width: 351px;
+	}
 	.container {
 		margin: 24px 0 0 0;
+	}
+	.list {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 900px) {
+	.list {
+		grid-template-columns: 1fr;
 	}
 }
