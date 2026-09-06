@@ -71,6 +71,28 @@
 	object-fit: contain;
 }
 
+.cta {
+	margin: 40px 0 0 0;
+	padding: 24px 28px;
+	box-sizing: border-box;
+	border-radius: 12px;
+	background-color: #f0f5ff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	flex-wrap: wrap;
+
+	&__text {
+		margin: 0;
+		max-width: 720px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1.35;
+		color: var(--main-black-color);
+	}
+}
+
 @media (max-width: 1600px) {
 	.company {
 		padding: 40px;

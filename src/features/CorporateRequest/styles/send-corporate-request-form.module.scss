@@ -1,0 +1,22 @@
+.container {
+	margin: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.form {
+	margin: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.caption {
+	margin: 12px 0 0 0;
+	font-weight: 400;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 1.15;
+	color: #2052b2;
+}

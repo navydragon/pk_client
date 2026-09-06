@@ -49,6 +49,9 @@ export interface IBatch {
 	id: number;
 	is_action_enabled: boolean;
 	learning_format: string;
+	name?: string;
+	schedule?: string;
+	seats_count?: number | null;
 	start_date: string;
 	status: string;
 }

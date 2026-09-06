@@ -12,11 +12,19 @@ import { getProgramDetailAction } from '../../../store/landing/actions';
 import { ModalOverlay } from '../../../shared/components/Modal/ui/modal-overlay';
 import { Button } from '../../../shared/components/Button/ui/button';
 import { Preloader } from '../../../shared/components/Preloader/ui/preloader';
+import { CompareToggleButton } from '../../../features/Compare/ui/compare-toggle-button';
 
 import styles from '../styles/detail.module.scss';
 
 const btnStyle: CSSProperties = {
 	margin: 'auto 0 0 0',
+};
+
+const compareBtnStyle: CSSProperties = {
+	margin: '12px 0 0 0',
+	width: '100%',
+	height: '48px',
+	borderRadius: '8px',
 };
 
 export const Detail: FC<IDetailProps> = ({
@@ -103,6 +111,13 @@ export const Detail: FC<IDetailProps> = ({
 							color='blue'
 							onClick={onOpen}
 						/>
+						{programDetail && (
+							<CompareToggleButton
+								type='program'
+								id={programDetail.id}
+								style={compareBtnStyle}
+							/>
+						)}
 					</div>
 					<div className={styles.info}>
 						<div className={styles.info__header}>

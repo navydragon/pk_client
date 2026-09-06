@@ -3,6 +3,7 @@ import type {
 	IApplication,
 	IApplicationWithBranch,
 } from '../../features/Application/types/types';
+import type { ICorporateRequestPayload } from '../../features/CorporateRequest/types/types';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
@@ -13,6 +14,7 @@ import {
 	getReviews,
 	subscribe,
 	subscribeWithBranch,
+	createCorporateRequest,
 } from '../../shared/api/landing';
 
 export const getProgramsAction = createAsyncThunk<IProgram[]>(
@@ -49,3 +51,8 @@ export const subscribeWithBranchAction = createAsyncThunk<
 	IApplicationWithBranch,
 	IApplicationWithBranch
 >('landing/subscribeWithBranch', subscribeWithBranch);
+
+export const createCorporateRequestAction = createAsyncThunk<
+	ICorporateRequestPayload,
+	ICorporateRequestPayload
+>('landing/createCorporateRequest', createCorporateRequest);

@@ -2,6 +2,7 @@ import type {
 	IApplication,
 	IApplicationWithBranch,
 } from '../../features/Application/types/types';
+import type { ICorporateRequestPayload } from '../../features/CorporateRequest/types/types';
 
 import { request } from './utils';
 
@@ -65,6 +66,17 @@ export const subscribeWithBranch = (data: IApplicationWithBranch) => {
 			phone: data.phone,
 			comment: data.comment,
 		}),
+	});
+};
+
+export const createCorporateRequest = (data: ICorporateRequestPayload) => {
+	return request('/corporate-requests/', {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(data),
 	});
 };
 

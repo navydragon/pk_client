@@ -1,12 +1,13 @@
 import type { CSSProperties, FC } from 'react';
 
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { Header } from '../Header/header';
 import { Button } from '../../../../shared/components/Button/ui/button';
 import { Modal } from '../../../../shared/components/Modal/ui/modal';
 import { SendApplicationForm } from '../../../../features/Application/ui/send-application-form';
+import { EROUTES } from '../../../../shared/utils/routes';
 
 import beaverImg from '../../../../shared/images/landing/beaver.png';
 import ovalImg from '../../../../shared/images/landing/skills-oval.svg';
@@ -81,14 +82,9 @@ export const Main: FC = () => {
 						}}
 						onClick={() => setIsOpenConsultForm(true)}
 					/>
-					<Link
-						to='programs'
-						smooth={true}
-						offset={0}
-						duration={1500}
-						spy={true}>
+					<RouterLink to={EROUTES.MATCH}>
 						<Button text='Подобрать программу' color='blue' style={ctaStyle} />
-					</Link>
+					</RouterLink>
 				</div>
 			</div>
 

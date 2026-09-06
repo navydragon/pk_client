@@ -14,7 +14,11 @@ const normalizeErrorToString = (data: any): string => {
 	}
 
 	return (
-		data.message || data.error || JSON.stringify(data) || 'Произошла ошибка'
+		data.detail ||
+		data.message ||
+		data.error ||
+		JSON.stringify(data) ||
+		'Произошла ошибка'
 	);
 };
 

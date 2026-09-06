@@ -52,6 +52,7 @@
 		transition: color .3s ease-in-out;
 		cursor: pointer;
 		white-space: nowrap;
+		text-decoration: none;
 		&:hover {
 			color: var(--main-blue-color);
 		}

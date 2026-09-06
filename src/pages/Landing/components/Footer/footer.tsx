@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 
 import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { getCurrentYear } from '../../../../shared/utils/getCurrentYear';
+import { EROUTES } from '../../../../shared/utils/routes';
 
 import styles from './footer.module.scss';
 
@@ -74,6 +76,16 @@ export const Footer: FC = () => {
 							spy={true}>
 							Расписание потоков
 						</Link>
+						<RouterLink
+							className={`${styles.text} ${styles.text_active}`}
+							to={EROUTES.COMPARE}>
+							Сравнение программ и потоков
+						</RouterLink>
+						<RouterLink
+							className={`${styles.text} ${styles.text_active}`}
+							to={EROUTES.MATCH}>
+							Подбор программы
+						</RouterLink>
 					</div>
 					<div className={styles.column}>
 						<h5 className={styles.title}>Контакты</h5>

@@ -9,6 +9,7 @@ import { Modal } from '../../../../shared/components/Modal/ui/modal';
 import { Select } from '../../../../shared/components/Select/ui/select';
 import { Detail } from '../../../../widgets/Detail/ui/detail';
 import { SendProgramForm } from '../../../../features/Application/ui/send-program-form';
+import { CompareToggleButton } from '../../../../features/Compare/ui/compare-toggle-button';
 
 import { setCurrentProgram } from '../../../../store/landing/reducer';
 
@@ -23,6 +24,13 @@ const btnStyle: CSSProperties = {
 	margin: '24px 0 0 auto',
 	width: '170px',
 	height: '56px',
+	borderRadius: '8px',
+};
+
+const compareBtnStyle: CSSProperties = {
+	margin: '12px 0 0 auto',
+	width: '170px',
+	height: '44px',
 	borderRadius: '8px',
 };
 
@@ -210,6 +218,11 @@ export const Programs: FC = () => {
 									color='blue'
 									style={btnStyle}
 									onClick={() => handleOpenDetail(elem)}
+								/>
+								<CompareToggleButton
+									type='program'
+									id={elem.id}
+									style={compareBtnStyle}
 								/>
 							</li>
 						))}

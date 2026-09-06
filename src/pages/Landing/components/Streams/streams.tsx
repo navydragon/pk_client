@@ -8,6 +8,7 @@ import { Button } from '../../../../shared/components/Button/ui/button';
 import { Modal } from '../../../../shared/components/Modal/ui/modal';
 import { Select } from '../../../../shared/components/Select/ui/select';
 import { SendProgramForm } from '../../../../features/Application/ui/send-program-form';
+import { CompareToggleButton } from '../../../../features/Compare/ui/compare-toggle-button';
 
 import {
 	setCurrentProgram,
@@ -25,8 +26,15 @@ interface IFilterOption {
 const ALL_OPTION: IFilterOption = { id: '', name: 'Выберите' };
 
 const btnStyle: CSSProperties = {
-	width: '277px',
-	height: '56px',
+	width: '180px',
+	height: '48px',
+	borderRadius: '8px',
+	flexShrink: 0,
+};
+
+const compareBtnStyle: CSSProperties = {
+	width: '140px',
+	height: '48px',
 	borderRadius: '8px',
 	flexShrink: 0,
 };
@@ -217,22 +225,29 @@ export const Streams: FC = () => {
 											</p>
 										</div>
 
-										<Button
-											text={
-												batch.action_button_text ||
-												(batch.is_action_enabled
-													? 'Записаться'
-													: 'Набор завершен')
-											}
-											color='blue'
-											style={btnStyle}
-											isBlock={!batch.is_action_enabled}
-											onClick={
-												batch.is_action_enabled
-													? () => handleOpenModal(elem, batch)
-													: undefined
-											}
-										/>
+										<div className={styles.part__actions}>
+											<Button
+												text={
+													batch.action_button_text ||
+													(batch.is_action_enabled
+														? 'Записаться'
+														: 'Набор завершен')
+												}
+												color='blue'
+												style={btnStyle}
+												isBlock={!batch.is_action_enabled}
+												onClick={
+													batch.is_action_enabled
+														? () => handleOpenModal(elem, batch)
+														: undefined
+												}
+											/>
+											<CompareToggleButton
+												type='batch'
+												id={batch.id}
+												style={compareBtnStyle}
+											/>
+										</div>
 									</li>
 								))}
 							</ul>

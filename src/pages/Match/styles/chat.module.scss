@@ -1,0 +1,137 @@
+.wrap {
+	margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.toolbar {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.hint {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
+	color: var(--main-grey-dark-color);
+	max-width: 640px;
+}
+
+.clear {
+	border: none;
+	background: none;
+	color: var(--main-blue-color);
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.suggestions {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.suggestion {
+	padding: 10px 14px;
+	border-radius: 999px;
+	border: 1px solid #d9e8ff;
+	background: #f3f8ff;
+	color: #072971;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.messages {
+	min-height: 280px;
+	max-height: 520px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 8px 0;
+}
+
+.message {
+	max-width: 90%;
+	padding: 14px 16px;
+	border-radius: 16px;
+}
+
+.message_user {
+	align-self: flex-end;
+	background: var(--main-blue-color);
+	color: var(--main-white-color);
+}
+
+.message_assistant {
+	align-self: flex-start;
+	background: var(--main-grey-background-color);
+	color: var(--main-black-color);
+	max-width: 100%;
+}
+
+.message__text {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.4;
+	white-space: pre-wrap;
+}
+
+.error {
+	margin: 0;
+	font-size: 13px;
+	color: #b42318;
+}
+
+.form {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.input {
+	flex: 1;
+	height: 48px;
+	padding: 0 16px;
+	border: none;
+	border-radius: 8px;
+	background: var(--main-grey-background-color);
+	font-size: 14px;
+	outline: none;
+}
+
+.send {
+	width: 140px;
+	height: 48px;
+	border: none;
+	border-radius: 8px;
+	background: var(--main-blue-color);
+	color: var(--main-white-color);
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+@media (max-width: 900px) {
+	.form {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.send {
+		width: 100%;
+	}
+}
