@@ -5,6 +5,7 @@ import chkt from '../../../../shared/images/courses/chkt.jpg';
 import digitalEconomy from '../../../../shared/images/courses/digital-economy.jpg';
 import safetyEconomy from '../../../../shared/images/courses/safety-economy.png';
 import processAnalytics from '../../../../shared/images/courses/process-analytics.jpg';
+import vrElectrician from '../../../../shared/images/courses/vr-electrician.png';
 import fedyakin from '../../../../shared/images/authors/fedyakin.png';
 import tancevova from '../../../../shared/images/authors/tancevova.png';
 import medvedev from '../../../../shared/images/authors/medvedev.png';
@@ -97,6 +98,25 @@ import course_process_analytics_content_5 from '../../../../shared/images/screen
 import course_process_analytics_content_6 from '../../../../shared/images/screenshots/course_process_analytics/6.png';
 
 export const courses = [
+	{
+		name: 'VR-тренажер для\u00A0электромонтеров',
+		description:
+			'Практический тренажер в\u00A0виртуальной реальности для\u00A0отработки безопасных приёмов работы электромонтера: диагностика, операции на\u00A0оборудовании и\u00A0действия в\u00A0штатных и\u00A0аварийных ситуациях без\u00A0риска для\u00A0персонала.',
+		annotation: '',
+		authors: [],
+		screens: [],
+		tags: ['technology', 'safety'],
+		hours: 0,
+		date: '',
+		link: '',
+		id: 'vr-electrician-trainer',
+		img: vrElectrician,
+		active: false,
+		promoLinks: {
+			presentation: 'https://disk.yandex.ru/i/RCoUPdWcnmVSZw',
+			video: 'https://disk.yandex.ru/i/Uv-Ixg0OmK0uwg',
+		},
+	},
 	{
 		name: 'Цифровая трансформация в\u00A0экономике',
 		description:

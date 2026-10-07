@@ -11,8 +11,8 @@ export const CoursePage: FC = () => {
 	return (
 		<div className={styles.course}>
 			<Main />
-			<Format />
 			<Course />
+			<Format />
 			<Footer />
 		</div>
 	);

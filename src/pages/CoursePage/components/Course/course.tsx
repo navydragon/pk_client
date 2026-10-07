@@ -67,19 +67,40 @@ export const Course: FC = () => {
 							<h4 className={styles.card__name}>{elem.name}</h4>
 							<p className={styles.card__description}>{elem.description}</p>
 							<div className={styles.card__buttons}>
-								<Button
-									text='Подробнее'
-									onClick={() => openCourse(elem.id)}
-									color='blue'
-									style={btnStyle}
-								/>
-								{elem.active && (
-									<Button
-										text='Записаться'
-										onClick={() => openModal()}
-										color='black'
-										style={btnStyle}
-									/>
+								{'promoLinks' in elem && elem.promoLinks ? (
+									<>
+										<Button
+											text='Презентация'
+											type='link'
+											href={elem.promoLinks.presentation}
+											color='blue'
+											style={btnStyle}
+										/>
+										<Button
+											text='Видео'
+											type='link'
+											href={elem.promoLinks.video}
+											color='black'
+											style={btnStyle}
+										/>
+									</>
+								) : (
+									<>
+										<Button
+											text='Подробнее'
+											onClick={() => openCourse(elem.id)}
+											color='blue'
+											style={btnStyle}
+										/>
+										{elem.active && (
+											<Button
+												text='Записаться'
+												onClick={() => openModal()}
+												color='black'
+												style={btnStyle}
+											/>
+										)}
+									</>
 								)}
 							</div>
 						</div>
