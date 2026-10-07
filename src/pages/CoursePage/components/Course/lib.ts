@@ -112,6 +112,7 @@ export const courses = [
 		id: 'vr-electrician-trainer',
 		img: vrElectrician,
 		active: false,
+		statusLabel: '#VR',
 		promoLinks: {
 			presentation: 'https://disk.yandex.ru/i/RCoUPdWcnmVSZw',
 			video: 'https://disk.yandex.ru/i/Uv-Ixg0OmK0uwg',

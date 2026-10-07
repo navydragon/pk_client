@@ -57,7 +57,11 @@ export const Course: FC = () => {
 								src={elem.img}
 								alt={elem.id}></img>
 							<span className={styles.card__hours}>{`${
-								elem.active ? elem.hours + 'ч.' : '#В разработке'
+								elem.active
+									? elem.hours + 'ч.'
+									: 'statusLabel' in elem && elem.statusLabel
+										? elem.statusLabel
+										: '#В разработке'
 							}`}</span>
 						</div>
 						<div className={styles.card__bottom}>
