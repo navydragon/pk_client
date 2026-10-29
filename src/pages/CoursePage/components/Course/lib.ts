@@ -97,7 +97,33 @@ import course_process_analytics_content_4 from '../../../../shared/images/screen
 import course_process_analytics_content_5 from '../../../../shared/images/screenshots/course_process_analytics/5.png';
 import course_process_analytics_content_6 from '../../../../shared/images/screenshots/course_process_analytics/6.png';
 
+import digitalFootprintPreview from '../../../../shared/images/screenshots/course_digital_footprint/preview.png';
+import digitalFootprint1 from '../../../../shared/images/screenshots/course_digital_footprint/1.png';
+import digitalFootprint2 from '../../../../shared/images/screenshots/course_digital_footprint/2.png';
+import digitalFootprint3 from '../../../../shared/images/screenshots/course_digital_footprint/3.png';
+import digitalFootprint4 from '../../../../shared/images/screenshots/course_digital_footprint/4.png';
+
 export const courses = [
+	{
+		name: 'Безопасный цифровой след: практические правила для транспортной отрасли',
+		description: 'Курс посвящён формированию навыков безопасного поведения в цифровой среде с учётом специфики транспортной отрасли.',
+		annotation: 'В условиях активного использования цифровых сервисов, корпоративных информационных систем, мессенджеров и инструментов искусственного интеллекта соблюдение правил цифровой гигиены становится важным условием защиты служебной информации и предотвращения информационных инцидентов.',
+		authors: [{ name: 'Преподаватели и ученые транспортных вузов', degree: 'РУТ (МИИТ)', img: rut }],
+		screens: [
+			{ img: digitalFootprint1, type: 'content', link: '' },
+			{ img: digitalFootprint2, type: 'content', link: '' },
+			{ img: digitalFootprint3, type: 'content', link: '' },
+			{ img: digitalFootprint4, type: 'content', link: '' },
+		],
+		tags: ['technology', 'safety'],
+		hours: 72,
+		date: '',
+		link: '',
+		id: 'safe-digital-footprint',
+		img: digitalFootprintPreview,
+		active: false,
+		statusLabel: '72ч.',
+	},
 	{
 		name: 'VR-тренажер для\u00A0электромонтеров',
 		description:
